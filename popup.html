@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>popup</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+    <div>
+        <div id="app">
+            <div id="add-url">
+                <div style="display: inline-block;">
+                    <input v-model="url" type="text" class="form-control" style="width: 300px;" placeholder="URL you want to shield">
+                </div>
+                <button type="submit" class="btn btn-primary" @click="add">Add</button>
+                <hr>
+            </div>
+            <div id="list-url">
+                <ul>
+                    <li
+                        is="url-item"
+                        v-for="(index, url) in allUrls"
+                        :url="url"
+                        @remove="remove"
+                    ></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script src="js/my_script.js" charset="utf-8"></script>
+
+</html>
